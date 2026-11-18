@@ -3,7 +3,7 @@
 #include <math.h>
 
 #include "parametres.h"
-//#include "prod_matvec.h"
+#include "prod_matvec.h"
 
 // Fonction pour calculer le produit scalaire entre deux vecteurs
 double prod_scal(int n, double *a, double *b) {
@@ -53,7 +53,7 @@ void bicgstab(
     int indice_sortie = 0;
 
     // r = A*x
-    //prod_matvec_implicite_centre(x, r, t);
+    prod_matvec(x, r, t);
 
     // r = b - A*x ou r = b - r
     for (int i = 0; i < taille; i++)
@@ -76,7 +76,7 @@ void bicgstab(
             p[i] = r[i] + beta * (p[i] - omega * v[i]);
 
         // v = A*p
-        //prod_matvec_implicite_centre(p, v, t);
+        prod_matvec(p, v, t);
 
         double denom = prod_scal(taille, r_chapeau, v);
         if (fabs(denom) < 1e-20) break;
@@ -93,7 +93,7 @@ void bicgstab(
         }
 
         // l = A*s
-        //prod_matvec_implicite_centre(s, l, t);
+        prod_matvec(s, l, t);
 
         double l_l = prod_scal(taille, l, l);
         if (fabs(l_l) < 1e-20) break;
