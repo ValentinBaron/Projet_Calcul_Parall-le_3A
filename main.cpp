@@ -14,6 +14,7 @@ int main(int argc, char *argv[]){
     double Lx   = 0.0;      // Initialisation à 0 
     double Ly   = 0.0;
     double D    = 0.0;
+    int cas     = 0;
 
     lireParametres(Lx, Ly, D);
 
@@ -22,9 +23,24 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
+    if (cas == 0){
+        cout << "| - Erreur : aucun cas lu !" << endl;
+        return 1;
+    }
+
     cout << "| - Choix des paramètres : " << endl;
     cout << "| Lx = " << Lx << " ; Ly = " << Ly << endl;
     cout << "| D = " << D << endl;
+
+    if (cas == 1){
+        cout << "| - Solution choisie : solution stationnaire avec g et h nulle" << endl;
+    }
+    if (cas == 2){
+        cout << "| - Solution choisie : solution stationnaire avec g = h = sin(x)+cos(y)" << endl;
+    }
+    if (cas == 3){
+        cout << "| - Solution choisie : solution instationnaire périodique" << endl;
+    }
 
     return 0;
 }
