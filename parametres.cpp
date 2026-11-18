@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void lireParametres(double& Lx, double& Ly, double& D){   
+void lireParametres(double& Lx, double& Ly, double& D, int& cas){   
 
     ifstream fichier("parametres.dat");
 
@@ -29,4 +29,5 @@ void lireParametres(double& Lx, double& Ly, double& D){
     Lx = valeurs[0];
     Ly = valeurs[1];
     D  = valeurs[2];
+    cas = valeurs[3];
 }
