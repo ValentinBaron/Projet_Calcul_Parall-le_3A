@@ -1,1 +1,6 @@
-void prod_matvec(double *U0, double *U, double t);
+#ifndef PROD_MATVEC_H
+#define PROD_MATVEC_H
+
+void prod_matvec(double *U0, double *U);
+
+#endif

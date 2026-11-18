@@ -30,8 +30,7 @@ void bicgstab(
     double *b,                      // vecteur b
     double *x,                      // vecteur x
     int kmax,                       // max itérations
-    double eps,                     // critère d'arrêt
-    double t
+    double eps                      // critère d'arrêt
     )   {
 
     // Allocation des vecteurs
@@ -53,7 +52,7 @@ void bicgstab(
     int indice_sortie = 0;
 
     // r = A*x
-    prod_matvec(x, r, t);
+    prod_matvec(x, r);
 
     // r = b - A*x ou r = b - r
     for (int i = 0; i < taille; i++)
@@ -76,7 +75,7 @@ void bicgstab(
             p[i] = r[i] + beta * (p[i] - omega * v[i]);
 
         // v = A*p
-        prod_matvec(p, v, t);
+        prod_matvec(p, v);
 
         double denom = prod_scal(taille, r_chapeau, v);
         if (fabs(denom) < 1e-20) break;
@@ -93,7 +92,7 @@ void bicgstab(
         }
 
         // l = A*s
-        prod_matvec(s, l, t);
+        prod_matvec(s, l);
 
         double l_l = prod_scal(taille, l, l);
         if (fabs(l_l) < 1e-20) break;
@@ -111,8 +110,9 @@ void bicgstab(
         rho0 = rho;
     }
     
-    printf("Indice sortie = %d\n",indice_sortie);
-    printf("Norme de x = %f \n",norme(taille,x));
+    // Vérification de la sortie du BiCGStab
+    // printf("Indice sortie = %d\n",indice_sortie);
+    // printf("Norme de x = %f \n",norme(taille,x));
 
     free(r);
     free(r_chapeau);
