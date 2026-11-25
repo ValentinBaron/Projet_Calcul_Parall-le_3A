@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "fonctions.h"
 #include "parametres.h"
+#include "fonctions.h"
 
 void prod_matvec(double *U0, double *U)
 {
