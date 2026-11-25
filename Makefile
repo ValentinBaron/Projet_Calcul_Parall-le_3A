@@ -1,8 +1,8 @@
 CXX = /usr/lib64/openmpi/bin/mpic++
 CXXFLAGS = -Wall
 
-main: main.o bicgstab.o fonctions.o parametres.o
-	$(CXX) main.o bicgstab.o fonctions.o parametres.o -o main
+main: main.o bicgstab.o prod_matvec.o fonctions.o parametres.o
+	$(CXX) main.o bicgstab.o prod_matvec.o fonctions.o parametres.o -o main
 
 main.o: main.cpp bicgstab.h fonctions.h parametres.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
