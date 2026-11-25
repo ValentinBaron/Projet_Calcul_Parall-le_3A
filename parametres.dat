@@ -23,3 +23,14 @@
 
 ## Pas de temps dt
 0.05
+
+## Fonction h et g !
+# 0 pour la fonction nulle
+# 1 pour la fonction qui renvoie 1
+# 2 pour sin(x) + cos(y)
+
+# h
+0
+
+# g
+0
