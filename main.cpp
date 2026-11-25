@@ -70,6 +70,9 @@ int main(int argc, char *argv[]){
         B[k] = 0.0;
     }
 
+    cout << "| - Initialisation des variables réussies " << endl;
+    cout << "| - Début de la boucle en temps " << endl;
+
     // Boucle en temps
     for (int iter = 1; iter <= nb_iter; iter++) {
         
@@ -91,6 +94,8 @@ int main(int argc, char *argv[]){
         U0 = U;
         U = temp;
     }
+
+    cout << "| - Fin de la boucle en temps " << endl;
 
     free(U0);
     free(U);
