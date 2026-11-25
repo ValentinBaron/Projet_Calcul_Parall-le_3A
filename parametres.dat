@@ -7,3 +7,9 @@
 
 ## Coefficient de diffusion D
 1.0
+
+## Cas de la solution analytique :
+# 1 pour stationnaire avec g et h nulle
+# 2 pour stationnaire avec g = h = sin(x) + cos(y)
+# 3 pour instationnaire périodique
+1
