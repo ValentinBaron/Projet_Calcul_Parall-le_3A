@@ -24,6 +24,9 @@
 ## Pas de temps dt
 0.05
 
+## Temps final en secondes
+10.0
+
 ## Fonction h et g !
 # 0 pour la fonction nulle
 # 1 pour la fonction qui renvoie 1
