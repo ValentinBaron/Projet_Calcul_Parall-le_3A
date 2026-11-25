@@ -7,6 +7,12 @@
 
 void prod_matvec(double *U0, double *U)
 {
+    double dt = 0.01;
+    double dx = 0.1;
+    double dy = 0.1;
+    int Nx = 1000;
+    int Ny = 1000;
+    
     // Coefficients de la matrice
     double alpha = 1.0/dt + 2.0*D/(dx*dx) + 2.0*D/(dy*dy);
     double beta  = -D/(dx*dx);   // voisins en x (est / ouest)
