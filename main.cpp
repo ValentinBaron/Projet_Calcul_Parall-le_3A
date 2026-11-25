@@ -42,6 +42,7 @@ int main(int argc, char *argv[]){
     cout << "| Lx = " << Lx << " ; Ly = " << Ly << endl;
     cout << "| D = " << D << endl;
     cout << "| Nx = " << Nx << " ; Ny = " << Ny << endl;
+    cout << "| Pas de temps dt = " << dt << " ; Temps final Tf = " << Param.Tf << endl;
 
     if (cas == 1){
         cout << "| - Solution choisie : solution stationnaire avec g et h nulle" << endl;
@@ -52,6 +53,10 @@ int main(int argc, char *argv[]){
     if (cas == 3){
         cout << "| - Solution choisie : solution instationnaire périodique" << endl;
     }
+
+
+    // -------- Début de la résolution numérique ---------
+
 
     double *U = (double*)malloc(Nx * Ny * sizeof(double));
     double *U0 = (double*)malloc(Nx * Ny * sizeof(double));
