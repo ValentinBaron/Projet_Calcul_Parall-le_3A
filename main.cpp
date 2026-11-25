@@ -15,8 +15,10 @@ int main(int argc, char *argv[]){
     double Ly   = 0.0;
     double D    = 0.0;
     int cas     = 0;
+    int Nx      = 0;
+    int Ny      = 0;
 
-    lireParametres(Lx, Ly, D, cas);
+    lireParametres(Lx, Ly, Nx, Ny, D, cas);
 
     if ((Lx == 0.0) or (Ly == 0.0)){
         cout << "| - Erreur de lecture du domaine !" << endl;

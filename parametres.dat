@@ -13,3 +13,10 @@
 # 2 pour stationnaire avec g = h = sin(x) + cos(y)
 # 3 pour instationnaire périodique
 1
+
+## Nombre de points
+# En x : Nx
+100
+
+# En y : Ny
+100
