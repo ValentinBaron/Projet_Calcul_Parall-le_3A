@@ -1,6 +1,15 @@
 #ifndef _PARAMETRES_H
 #define _PARAMETRES_H
 
-void lireParametres(double& Lx, double& Ly, int& Nx, int& Ny, double& D, int& cas);
+struct parametres{
+    double Lx       = 0.0;
+    double Ly       = 0.0;
+    double D        = 0.0;
+    int    Nx       = 0;
+    int    Ny       = 0;
+    int    cas      = 0;
+};
+
+void lireParametres(parametres& Param);
 
 #endif

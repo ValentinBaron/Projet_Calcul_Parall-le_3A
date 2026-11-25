@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void lireParametres(double& Lx, double& Ly, int& Nx, int& Ny, double& D, int& cas){   
+void lireParametres(parametres& Param){   
 
     ifstream fichier("parametres.dat");
 
@@ -18,18 +18,18 @@ void lireParametres(double& Lx, double& Ly, int& Nx, int& Ny, double& D, int& ca
     }
 
     string ligne;
-    double valeurs[3];
+    double valeurs[6];
     int n = 0;
 
-    while (n < 3 && std::getline(fichier, ligne)) {
+    while (n < 6 && std::getline(fichier, ligne)) {
         if (ligne.empty() || ligne[0] == '#') continue;
         valeurs[n++] = stod(ligne);
     }
 
-    Lx = valeurs[0];
-    Ly = valeurs[1];
-    D  = valeurs[2];
-    cas = valeurs[3];
-    Nx = valeurs[4];
-    Ny = valeurs[5];
+    Param.Lx = valeurs[0];
+    Param.Ly = valeurs[1];
+    Param.D  = valeurs[2];
+    Param.cas = int(valeurs[3]);
+    Param.Nx = int(valeurs[4]);
+    Param.Ny = int(valeurs[5]);
 }
