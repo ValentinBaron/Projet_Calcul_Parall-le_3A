@@ -12,6 +12,7 @@ void prod_matvec(double *U0, double *U)
     double dy = 0.1;
     int Nx = 1000;
     int Ny = 1000;
+    double D = 1.0;
     
     // Coefficients de la matrice
     double alpha = 1.0/dt + 2.0*D/(dx*dx) + 2.0*D/(dy*dy);
