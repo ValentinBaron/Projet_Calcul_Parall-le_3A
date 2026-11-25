@@ -76,10 +76,10 @@ int main(int argc, char *argv[]){
         for (int k = 0; k < Nx * Ny; k++) U[k] = U0[k];
         
         // Mise à jour du second membre
-        second_membre(U0, B, t, Param);
+        second_membre(B, U0, t, Param);
         
         // Résolution par BiCGStab
-        bicgstab(Nx*Ny, U0, U, kmax, eps, Param);
+        bicgstab(Nx*Ny, B, U, kmax, eps, Param);
 
         // Échange des pointeurs
         double *temp = U0;
@@ -87,5 +87,9 @@ int main(int argc, char *argv[]){
         U = temp;
     }
 
+    free(U0);
+    free(U);
+    free(B);
+    
     return 0;
 }
