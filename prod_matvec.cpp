@@ -11,8 +11,8 @@ void prod_matvec(double *U0, double *U, parametres Param)
     int Ny = Param.Ny;
     double D = Param.D;
     double dt = Param.dt;
-    double dx = Param.Lx / Nx;
-    double dy = Param.Ly / Ny;
+    double dx = Param.Lx / (Nx+1);
+    double dy = Param.Ly / (Ny+1);
     
     // Coefficients de la matrice
     double alpha = 1.0/dt + 2.0*D/(dx*dx) + 2.0*D/(dy*dy);
@@ -41,8 +41,8 @@ void second_membre(double *B, double *Un, double t, parametres Param)
     int Ny = Param.Ny;
     double D = Param.D;
     double dt = Param.dt;
-    double dx = Param.Lx / Nx;
-    double dy = Param.Ly / Ny;
+    double dx = Param.Lx / (Nx+1);
+    double dy = Param.Ly / (Ny+1);
     double Lx = Param.Lx;
     double Ly = Param.Ly;
     
