@@ -34,3 +34,30 @@ void prod_matvec(double *U0, double *U, parametres Param)
         if (j < Ny-1) U[k] += gam *U0[k+Nx];   // nord
     }
 }
+
+void second_membre(double *B, double *Un, double t, parametres Param)
+{
+    int Nx = Param.Nx;
+    int Ny = Param.Ny;
+    double D = Param.D;
+    double dt = Param.dt;
+    double dx = Param.Lx / Nx;
+    double dy = Param.Ly / Ny;
+    double Lx = Param.Lx;
+    double Ly = Param.Ly;
+    
+    for (int k = 0; k < Nx*Ny; k++)
+    {
+        int j = k / Nx;
+        int i = k % Nx;
+        double x = (i+1)*dx;
+        double y = (j+1)*dy;
+
+        B[k] = Un[k]/dt + f(x, y, t, Param);
+
+        if (i == 0)    B[k] += D/(dx*dx) * h(0.0, y, Param);   // bord gauche
+        if (i == Nx-1) B[k] += D/(dx*dx) * h(Lx,  y, Param);   // bord droit
+        if (j == 0)    B[k] += D/(dy*dy) * g(x, 0.0, Param);   // bord bas
+        if (j == Ny-1) B[k] += D/(dy*dy) * g(x, Ly,  Param);   // bord haut
+    }
+}
