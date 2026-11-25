@@ -9,6 +9,8 @@ struct parametres{
     int    Nx       = 0;
     int    Ny       = 0;
     int    cas      = 0;
+    int    h_case   = -1;
+    int    g_case   = -1;
 };
 
 void lireParametres(parametres& Param);
