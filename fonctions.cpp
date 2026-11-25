@@ -35,7 +35,7 @@ double f(double x, double y, double t, parametres Param){
     return 0.0;
 }
 
-double hg(double x, double y, parametres Param){
+double g(double x, double y, parametres Param){
 
     if (Param.g_case == 0){
         return 0.0;
@@ -46,6 +46,23 @@ double hg(double x, double y, parametres Param){
     }
 
     if (Param.g_case == 2){
+        return sin(x) + cos(y);
+    }
+
+    return 0.0;
+}
+
+double h(double x, double y, parametres Param){
+
+    if (Param.h_case == 0){
+        return 0.0;
+    }
+
+    if (Param.h_case == 1){
+        return 1.0;
+    }
+
+    if (Param.h_case == 2){
         return sin(x) + cos(y);
     }
 
