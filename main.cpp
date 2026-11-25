@@ -3,6 +3,7 @@
 #include "parametres.h"
 #include "fonctions.h"
 #include "bicgstab.h"
+#include "prod_matvec.h"
 
 using namespace std;
 
@@ -18,6 +19,8 @@ int main(int argc, char *argv[]){
 
     int Nx = Param.Nx;
     int Ny = Param.Ny;
+    int nb_iter = Param.Tf / Param.dt;
+    int cas = Param.cas;
     double D = Param.D;
     double dt = Param.dt;
     double dx = Param.Lx / (Nx+1);
@@ -57,10 +60,6 @@ int main(int argc, char *argv[]){
     // Initialisation à t = 0
     double t = 0.0;
     for (int k = 0; k < Nx * Ny; k++) {
-        int j = k / Nx;
-        int i = k % Nx;
-        double x = xmin + i * dx;
-        double y = ymin + j * dy;
         U0[k] = 0.0;
         U[k] = U0[k];
         B[k] = 0.0;
@@ -80,7 +79,7 @@ int main(int argc, char *argv[]){
         second_membre(U0, B, t, Param);
         
         // Résolution par BiCGStab
-        bicgstab(N, B, U, kmax, eps, Nx, Ny, dx, dy, dt, D);
+        bicgstab(Nx*Ny, U0, U, kmax, eps, Param);
 
         // Échange des pointeurs
         double *temp = U0;
