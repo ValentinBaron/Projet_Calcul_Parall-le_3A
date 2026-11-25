@@ -5,6 +5,7 @@ struct parametres{
     double Lx       = 0.0;
     double Ly       = 0.0;
     double D        = 0.0;
+    double dt       = 0.0;
     int    Nx       = 0;
     int    Ny       = 0;
     int    cas      = 0;

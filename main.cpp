@@ -8,9 +8,11 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
+    // Récupération des paramètres
+
     cout << " -- Début du programme -- " << endl;
     cout << "--------------------------" << endl;
-    // Récupération des paramètres
+    
     parametres Param;
     lireParametres(Param);
 

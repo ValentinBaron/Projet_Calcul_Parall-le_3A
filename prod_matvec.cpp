@@ -5,14 +5,14 @@
 #include "parametres.h"
 #include "fonctions.h"
 
-void prod_matvec(double *U0, double *U)
+void prod_matvec(double *U0, double *U, parametres Param)
 {
-    double dt = 0.01;
-    double dx = 0.1;
-    double dy = 0.1;
-    int Nx = 1000;
-    int Ny = 1000;
-    double D = 1.0;
+    int Nx = Param.Nx;
+    int Ny = Param.Ny;
+    double D = Param.D;
+    double dt = Param.dt;
+    double dx = Param.Lx / Nx;
+    double dy = Param.Ly / Ny;
     
     // Coefficients de la matrice
     double alpha = 1.0/dt + 2.0*D/(dx*dx) + 2.0*D/(dy*dy);

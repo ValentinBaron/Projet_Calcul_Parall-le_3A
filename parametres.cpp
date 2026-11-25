@@ -18,10 +18,10 @@ void lireParametres(parametres& Param){
     }
 
     string ligne;
-    double valeurs[6];
+    double valeurs[7];
     int n = 0;
 
-    while (n < 6 && std::getline(fichier, ligne)) {
+    while (n < 7 && std::getline(fichier, ligne)) {
         if (ligne.empty() || ligne[0] == '#') continue;
         valeurs[n++] = stod(ligne);
     }
@@ -32,4 +32,5 @@ void lireParametres(parametres& Param){
     Param.cas = int(valeurs[3]);
     Param.Nx = int(valeurs[4]);
     Param.Ny = int(valeurs[5]);
+    Param.dt = valeurs[6];
 }
