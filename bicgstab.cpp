@@ -50,7 +50,7 @@ void bicgstab(
     double alpha = 1.0, omega = 1.0;
     double rho = 1.0, rho0 = 1.0;
 
-    int indice_sortie = 0;
+    //int indice_sortie = 0;
 
     // r = A*x
     prod_matvec(x, r, Param);
@@ -65,7 +65,7 @@ void bicgstab(
 
     for (int k = 0; k < kmax; k++) {
 
-        indice_sortie = k;
+        //indice_sortie = k;
 
         rho = prod_scal(taille, r_chapeau, r);
         if (fabs(rho) < 1e-20) break;
